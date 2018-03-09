@@ -19,6 +19,6 @@ city_url = get_url('广州')
 r = requests.get(city_url)
 r.encoding = 'utf-8'
 response = r.text
-we = re.match(r'var hour3data=',response)
-print(response)
+we = re.findall('hour3data={(.*?)}',response)
+#print(response)
 print(we)
